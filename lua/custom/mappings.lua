@@ -11,8 +11,14 @@ M.general = {
         require("conform").format()
       end,
       "formatting",
-    }
+    },
 
+    ["<leader>t0"] = {
+      function()
+        require("base46").toggle_transparency()
+      end,
+      "Toggle transparency",
+    },
   },
   v = {
     [">"] = { ">gv", "indent"},
