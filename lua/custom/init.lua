@@ -25,4 +25,4 @@ vim.opt.clipboard = "unnamedplus"
 
 -- a 影响了Copy 粘贴
 -- vim.opt.mouse = "a"
-vim.opt.mouse = "nv"
+vim.opt.mouse = "nicr"
