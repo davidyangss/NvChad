@@ -91,7 +91,7 @@ local plugins = {
     end,
     ft = { "markdown" },
   },
-  { 
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
@@ -136,6 +136,33 @@ local plugins = {
     event = {"CmdlineEnter"},
     ft = {"go", 'gomod'},
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  },
+
+  { "folke/neodev.nvim",
+    opts = {}
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap"
+    },
+    event = "VeryLazy",
+    config = function()
+      require("neodev").setup({
+       library = { plugins = { "nvim-dap-ui" }, types = true },
+      })
+    end
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    dependencies = {
+      "mfussenegger/nvim-dap"
+    },
+    event = "VeryLazy",
+    config = function()
+      -- Options, see to https://neovimcraft.com/plugin/theHamsta/nvim-dap-virtual-text
+      require("nvim-dap-virtual-text").setup()
+    end
   },
 
   {
